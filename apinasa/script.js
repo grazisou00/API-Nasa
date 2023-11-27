@@ -23,7 +23,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function displayImages(images) {
-        galleryContainer.innerHTML = "";
+        while(galleryContainer.firstChild){
+            galleryContainer.removeChild(galleryContainer.firstChild);
+        }
 
         images.forEach(image => {
             const imageCard = document.createElement("div");
